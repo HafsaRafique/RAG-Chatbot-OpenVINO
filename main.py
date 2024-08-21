@@ -6,8 +6,6 @@ import os
 import nltk
 from optimum.intel import OVModelForCausalLM
 import faiss
-import gc
-import gradio as gr
 import tempfile
 import torch
 from chatbot_state import ChatbotState
