@@ -1,0 +1,12 @@
+transformers 
+sentence-transformers 
+PyPDF2 
+faiss-cpu 
+openvino-nightly
+optimum[openvino]
+optimum[intel]
+nltk 
+gradio 
+numpy
+pypdf
+
