@@ -6,7 +6,6 @@ openvino-nightly
 optimum[openvino]
 optimum[intel]
 nltk 
-gradio 
 numpy
 pypdf
 
