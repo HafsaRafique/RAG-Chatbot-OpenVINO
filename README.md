@@ -2,7 +2,7 @@
 
 A lightweight, built for speed **Retrieval-Augmented Generation (RAG) chatbot** that lets you upload a PDF and ask natural-language questions about its contents with inference accelerated by **Intel OpenVINO**.
 
-Built with Flask, FAISS, Sentence-Transformers, and `optimum-intel`, the app retrieves the most relevant chunks of your document and grounds the LLM's answer strictly in that context — refusing to answer when the document doesn't contain the information.
+Built with Flask, FAISS, Sentence-Transformers, and `optimum-intel`, the app retrieves the most relevant chunks of your document and grounds the LLM's answer strictly in that context, refusing to answer when the document doesn't contain the information. (During the initial stages of chatbot development boom in early 2024)
 
 ![Python](https://img.shields.io/badge/Python-3.9+-3776AB?logo=python&logoColor=white)
 ![Flask](https://img.shields.io/badge/Flask-web%20app-000000?logo=flask&logoColor=white)
@@ -14,13 +14,13 @@ Built with Flask, FAISS, Sentence-Transformers, and `optimum-intel`, the app ret
 
 ##  Features
 
-- ** PDF upload & parsing** — extracts text from any PDF via `PyPDF2`
-- ** Semantic chunking** — splits document text into overlapping, sentence-aware chunks (NLTK) instead of naive fixed-length splitting
-- ** Vector search** — embeds chunks with `sentence-transformers/all-MiniLM-L6-v2` and indexes them with `faiss.IndexFlatL2` for fast nearest-neighbor retrieval
-- ** Grounded answers** — computes cosine similarity between the query and retrieved chunks; if nothing is similar enough, the bot honestly replies that the answer isn't in the document instead of hallucinating
-- ** OpenVINO-accelerated inference** — the LLM runs through `optimum-intel`'s `OVModelForCausalLM`, taking advantage of Intel hardware acceleration instead of a plain PyTorch/Transformers pipeline
-- ** Simple web UI** — a minimal Flask front end for uploading a PDF and chatting with it in the browser
-- ** Session reset** — a `/restart` endpoint to clear the in-memory index and start over with a new document
+- ** PDF upload & parsing**,  extracts text from any PDF via `PyPDF2`
+- ** Semantic chunking**, splits document text into overlapping, sentence-aware chunks (NLTK) instead of naive fixed-length splitting
+- ** Vector search**,  embeds chunks with `sentence-transformers/all-MiniLM-L6-v2` and indexes them with `faiss.IndexFlatL2` for fast nearest-neighbor retrieval
+- ** Grounded answers**,  computes cosine similarity between the query and retrieved chunks; if nothing is similar enough, the bot honestly replies that the answer isn't in the document instead of hallucinating
+- ** OpenVINO-accelerated inference**,  the LLM runs through `optimum-intel`'s `OVModelForCausalLM`, taking advantage of Intel hardware acceleration instead of a plain PyTorch/Transformers pipeline
+- ** Simple web UI**,  a minimal Flask front end for uploading a PDF and chatting with it in the browser
+- ** Session reset**,  a `/restart` endpoint to clear the in-memory index and start over with a new document
 
 ---
 
